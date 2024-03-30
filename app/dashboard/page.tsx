@@ -11,12 +11,13 @@ import { Progress } from "antd";
 import { IoMenu } from "react-icons/io5";
 import { BsArrowRight } from "react-icons/bs";
 import { MdKeyboardArrowLeft } from "react-icons/md";
-import useUseraddress from "../hooks/useUserAddress";
+// import useUseraddress from "../hooks/useUserAddress";
 import { Sidebar } from "../components/desktop/sidebar";
 import { StatsBoard } from "../components/desktop/stats-board";
 import { TransactionStat } from "../components/desktop/transaction-stat";
 import useCountdownTimer from "../hooks/usecountdown";
 import { useAppSelector } from "../../redux/hooks";
+import { useWeb3ModalAccount } from '@web3modal/ethers/react'
 
 const SocialLogo = [
     "/discord.png",
@@ -90,10 +91,15 @@ const tableData = [
 
 export default function Dashbaord() {
     const timeLeft = useCountdownTimer(new Date('2024-12-31T23:59:59'));
-    const address = useAppSelector((state) => state.auth.value);
+    // const address = useAppSelector((state) => state.auth.value);
     const [isContribute, setIsContribute] = useState<boolean>(false)
+    let userAddress = ''
+    const { address, chainId, isConnected } = useWeb3ModalAccount()
 
-    const userAddress = address.substring(0, 12) + '...' + address.slice(-4);
+    if (address) {
+
+        userAddress = address.substring(0, 12) + '...' + address.slice(-4);
+    }
 
     return (
         <Fragment>

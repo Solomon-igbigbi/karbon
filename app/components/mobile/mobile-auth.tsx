@@ -50,7 +50,7 @@ export const MobileAuth: FC<IAuth> = ({ login }) => {
         </div>
         <div className="flex flex-col gap-[30px] px-5 py-6 w-[100%] bg-[#101010] rounded-br-[8px] rounded-bl-[8px] mt-[1px]">
           <h2 className="text-[14px] font-[400p] text-[#FF3636]">To launch the app, you need to connect your wallet first, this is to enable us provide you a seamless experience.</h2>
-          <button onClick={login} className=" flex items-center justify-center gap-[10px] w-[100%] h-[64px] rounded-lg bg-[#000000] text-[16px] font-[700] text-[#08E04A] border-0 border-r-[3px] border-e-[#08E04A]">
+          <button onClick={() => login()} className=" flex items-center justify-center gap-[10px] w-[100%] h-[64px] rounded-lg bg-[#000000] text-[16px] font-[700] text-[#08E04A] border-0 border-r-[3px] border-e-[#08E04A]">
             <Image 
               src="/button-icon.png"
               width={21}
