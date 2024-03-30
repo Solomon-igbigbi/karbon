@@ -87,7 +87,7 @@ export default function Home() {
   // };
   return (
     <Fragment>
-        {/* <main className="sm:hidden flex min-h-screen flex-col items-center gap-[80px] p-10 bg-[url('/backdrop.png')] bg-center">
+        <main className="sm:hidden flex min-h-screen flex-col items-center gap-[80px] p-10 bg-[url('/backdrop.png')] bg-center">
         <div className="flex items-center w-[421px] h-[52px] pl-3 border border-[#EDEDED] rounded-lg bg-[url('/ads-bg-img.png')] bg-right bg-no-repeat">
           <Image 
             src="/close-icon.png"
@@ -138,9 +138,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col gap-[30px] p-6 w-[450px] bg-[#101010] rounded-br-[8px] rounded-bl-[8px] mt-[1px]">
             <h2 className="text-[12px] font-[400p] text-[#FF3636]">To launch the app, you need to connect your wallet first, this is to enable us provide you a seamless experience.</h2>
-            <button onClick={() => {
-              open()
-            }} className=" flex items-center justify-center gap-[10px] w-[100%] h-[64px] rounded-lg bg-[#000000] text-[12px] font-[700] text-[#08E04A] border-0 border-r-[3px] border-e-[#08E04A]">
+            <button onClick={() => open()} className=" flex items-center justify-center gap-[10px] w-[100%] h-[64px] rounded-lg bg-[#000000] text-[12px] font-[700] text-[#08E04A] border-0 border-r-[3px] border-e-[#08E04A]">
               <Image 
                 src="/button-icon.png"
                 width={16}
@@ -152,10 +150,10 @@ export default function Home() {
           </div>
         </div>
       </main>
-      <MobileAuth 
+      {/* <MobileAuth 
         login={open}
       /> */}
-            <button onClick={() => open()}>Open Connect Modal</button>
+            {/* <button onClick={() => open()}>Open Connect Modal</button> */}
     </Fragment>
   );
 }
