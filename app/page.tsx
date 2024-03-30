@@ -49,7 +49,6 @@ export default function Home() {
 
         if (web3auth.connected) {
           setLoggedIn(true)
-          router.push("/dashboard")
         }
       } catch (error) {
         console.error(error);
@@ -67,10 +66,10 @@ export default function Home() {
         .then((data: string[]) => {
           setAddress(data[0])
           localStorage.setItem('userAddress', data[0]);
-          console.log(data[0])
+          router.push('/dashboard')
         })
     }
-  }, [loggedIn, setAddress, web3.eth])
+  }, [loggedIn, router, setAddress, web3.eth])
 
   const login = async () => {
     const web3authProvider = await web3auth.connect();
