@@ -18,6 +18,7 @@ import { TransactionStat } from "../components/desktop/transaction-stat";
 import useCountdownTimer from "../hooks/usecountdown";
 import { useAppSelector } from "../../redux/hooks";
 import { useWeb3ModalAccount } from '@web3modal/ethers/react'
+import { useAccount } from "wagmi";
 
 const SocialLogo = [
     "/discord.png",
@@ -94,7 +95,7 @@ export default function Dashbaord() {
     // const address = useAppSelector((state) => state.auth.value);
     const [isContribute, setIsContribute] = useState<boolean>(false)
     let userAddress = ''
-    const { address, chainId, isConnected } = useWeb3ModalAccount()
+    const {address, isConnecting, isDisconnected } = useAccount()
 
     if (address) {
 

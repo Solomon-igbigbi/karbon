@@ -54,10 +54,10 @@ export const DesktopAuth: FC<IAuth> = ({ login }) => {
             <div className="flex gap-[10px] items-center">
               <h2 className="text-[12px] font-[400] text-[#FFFFFF]/75">SALE ENDS IN</h2>
               <div className="flex items-center gap-[10px] text-[16px] font-[400] text-[#FFFFFF]/75">
-                <span>{timeLeft.days}d</span>
-                <span>{timeLeft.hours}h</span>
-                <span>{timeLeft.minutes}m</span>
-                <span>{timeLeft.seconds}s</span>
+                <div>1d</div>
+                <div>22h</div>
+                <div>50m</div>
+                <div>45s</div>
               </div>
             </div>
           </div>
