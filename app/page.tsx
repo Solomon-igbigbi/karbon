@@ -1,5 +1,5 @@
 'use client'
-import { Fragment, useEffect, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Web3Auth } from "@web3auth/modal";
 import { CHAIN_NAMESPACES, IProvider,WALLET_ADAPTERS, WEB3AUTH_NETWORK } from "@web3auth/base";
 import { useRouter } from "next/navigation";
@@ -10,6 +10,8 @@ import { DesktopAuth } from "./components/desktop/desktop-auth";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import useUseraddress from "./hooks/useUserAddress";
+import { setAuthValue } from "../redux/features/authSlice";
+import { useAppDispatch } from "@/redux/hooks";
 
 const clientId = 'BDUQ2Z7pztPGhssjh7oVakgILAIzBikjgkLBwnMp34X5AAiYBgETWwUr6XnS2-7mAKiDHiWeZPfNu2YhiYtLqY8';
 
@@ -38,6 +40,8 @@ export default function Home() {
   const [provider, setProvider] = useState<IProvider | null>(null);
   const [loggedIn, setLoggedIn] = useState<boolean>(false);
 
+  const dispatch = useAppDispatch()
+
   const router = useRouter()
 
   useEffect(() => {
@@ -64,12 +68,11 @@ export default function Home() {
     if (loggedIn) {
       web3.eth.getAccounts()
         .then((data: string[]) => {
-          setAddress(data[0])
-          localStorage.setItem('userAddress', data[0]);
+          dispatch(setAuthValue(data[0]))
           router.push('/dashboard')
         })
     }
-  }, [loggedIn, router, setAddress, web3.eth])
+  }, [dispatch, loggedIn, router, setAddress, web3.eth])
 
   const login = async () => {
     const web3authProvider = await web3auth.connect();
