@@ -60,12 +60,12 @@ export const MobileAuth: FC<IAuth> = ({ login }) => {
             <span>Connect Wallet</span>
           </button>
         </div>
-        <div className="flex items-center w-[90%] pl-3 h-[86px] border border-[#EDEDED] rounded-lg bg-[url('/ads-bg-img.png')] bg-right bg-no-repeat bg-[length:120px_80px] mt-[40px]">
+        <div className="flex items-center w-[90%] pl-3 h-[86px] border border-[#EDEDED]/80 rounded-lg bg-[url('/ads-bg-img.png')] bg-right bg-no-repeat bg-[length:120px_80px] mt-[40px]">
           <h3 className="w-[173px] text-[12px] font-[400] ml-[8px] leading-[18px]">A chance to buy Kar tokens at half of the launch price</h3>
         </div>
         <div className="flex items-center w-[90%] justify-between mt-[40px]">
-          <span className="w-[130px] h-[36px] text-[12px] font-[400] text-[#FFFFFF]/70">Copyright © 2024 Kar. All rights reserved.</span>
-          <span className="w-[110px] h-[18px] text-[12px] font-[400] text-[#FFFFFF]/70">Gaziantep, Türkiye</span>
+          <span className="w-[130px] h-[36px] text-[12px] font-[400] text-[#FFFFFF]/80">Copyright © 2024 Kar. All rights reserved.</span>
+          <span className="w-[110px] h-[18px] text-[12px] font-[400] text-[#FFFFFF]/80">Gaziantep, Türkiye</span>
         </div>
       </main>
     )
