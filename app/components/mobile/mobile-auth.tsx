@@ -20,11 +20,11 @@ export const MobileAuth: FC<IAuth> = ({ login }) => {
             alt="Logo"
             className="cursor-pointer"
           />
-          <h2 className="text-[24px] font-[600]">Token Sale DApp</h2>
+          <h2 className="text-[24px] font-[600] text-[#FFFFFF]">Token Sale DApp</h2>
         </div>
         <div className="flex flex-col gap-[12px] px-2 py-6 w-[100%] bg-[#101010] mt-[20px]">
           <div className="flex items-center justify-between">
-            <h2 className="text-[20px] font-[500]">Presale Progress</h2>
+            <h2 className="text-[20px] font-[500] text-[#FFFFFF]">Presale Progress</h2>
             <div className="flex items-center gap-[10px]">
               <h3 className="text-[14px] font-[400] text-[#FFFFFF]/75">$5,784,043.78</h3>
               <Image 
@@ -61,7 +61,7 @@ export const MobileAuth: FC<IAuth> = ({ login }) => {
           </button>
         </div>
         <div className="flex items-center w-[90%] pl-3 h-[86px] border border-[#EDEDED] rounded-lg bg-[url('/ads-bg-img.png')] bg-right bg-no-repeat bg-[length:120px_80px] mt-[40px]">
-          <h3 className="w-[173px] text-[12px] font-[400] ml-[8px] leading-[18px]">A chance to buy Kar tokens at half of the launch price</h3>
+          <h3 className="w-[173px] text-[12px] font-[400] ml-[8px] leading-[18px] text-[#FF3636]">A chance to buy Kar tokens at half of the launch price</h3>
         </div>
         <div className="flex items-center w-[90%] justify-between mt-[40px]">
           <span className="w-[130px] h-[36px] text-[12px] font-[400] text-[#FFFFFF]/70">Copyright © 2024 Kar. All rights reserved.</span>

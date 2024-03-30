@@ -17,7 +17,7 @@ export const DesktopAuth: FC<IAuth> = ({ login }) => {
             alt="Close Icon"
             className="cursor-pointer"
           />
-          <h3 className="text-[10px] font-[400] ml-[8px]">A chance to buy Kar tokens at half of the launch price</h3>
+          <h3 className="text-[10px] font-[400] ml-[8px] text-[#FFFFFF]">A chance to buy Kar tokens at half of the launch price</h3>
         </div>
 
         <div>
@@ -29,11 +29,11 @@ export const DesktopAuth: FC<IAuth> = ({ login }) => {
               alt="Logo"
               className="cursor-pointer"
             />
-            <h2 className="text-[20px] font-[600]">Token Sale DApp</h2>
+            <h2 className="text-[20px] font-[600] text-[#FFFFFF]">Token Sale DApp</h2>
           </div>
           <div className="flex flex-col gap-[12px] p-6 w-[450px] bg-[#101010] mt-[1px]">
             <div className="flex items-center justify-between">
-              <h2 className="text-[16px] font-[500]">Presale Progress</h2>
+              <h2 className="text-[16px] font-[500] text-[#FFFFFF]">Presale Progress</h2>
               <div className="flex items-center gap-[10px]">
                 <h3 className="text-[12px] font-[400] text-[#FFFFFF]/75">$5,784,043.78</h3>
                 <Image 
