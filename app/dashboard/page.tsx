@@ -247,7 +247,7 @@ export default function Dashbaord() {
                     height={21}
                     alt="logo"
                 />
-                <div className="flex items-center gap-[10px] w-[156px]">
+                <div className="flex items-center gap-[10px]">
                     <div className="flex items-center justify-center gap-[8px] bg-[#101010] py-[7px] px-[13px] rounded-[4px] text-[12px] font-[400]">
                         <Image 
                             src="/ethereum.png"
