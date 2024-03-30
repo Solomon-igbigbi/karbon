@@ -255,7 +255,7 @@ export default function Dashbaord() {
                             height={16}
                             alt="ethereum logo"
                         />
-                        <h3>userAddress</h3>
+                        <h3>{userAddress}</h3>
                         <FaChevronDown />
                     </div>
                     <IoMenu className="text-[32px]" />
