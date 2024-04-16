@@ -44,7 +44,7 @@ export const ClaimStatsBoard = () => {
             </span>
             <span className="text-[28px] font-[300]">
               21,325
-              <sup className="text-[15px] font-[300] mt-[4px]">.45</sup>
+              <sup className="text-[15px] font-[300] mt-[4px]">.45</sup>{" "}
               <span className="text-[#FFFFFF80] opacity-50">USDT</span>
             </span>
           </div>
