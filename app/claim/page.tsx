@@ -120,7 +120,7 @@ export default function Dashbaord() {
               <FaChevronDown />
             </div>
           </div>
-          <div className="w-[100%] flex items-center justify-between px-[8px] hidden">
+          <div className="w-[100%] flex items-center justify-between px-[8px] hidden sm:flex">
             <div className="w-[21px]">
               <LogoIcon />
             </div>
