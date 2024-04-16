@@ -1,4 +1,5 @@
 "use client";
+import LogoIcon from "@/public/logo";
 import Image from "next/image";
 import {useRouter} from "next/navigation";
 import {GiTwoCoins} from "react-icons/gi";
@@ -6,24 +7,24 @@ import {RiHandCoinLine} from "react-icons/ri";
 
 const SocialLogo = ["/discord.png", "/telegram.png", "/twitter.png"];
 
-export const Sidebar = ({active}: {active?: "sale" | "claim"}) => {
+export const SidebarMobile = ({active}: {active?: "sale" | "claim"}) => {
   const router = useRouter();
   const activeStyle =
-    "border-l-[3px] border-s-[#08E04A]  rounded-bl-[8px] rounded-tl-[8px] border-0 h-[48px] bg-[#000000]";
+    "border-l-[3px] border-s-[#08E04A]   border-0 h-[50px] bg-[#000000]";
 
   const handleClick = (path: string) => {
     router.push(`/${path}`);
   };
 
   return (
-    <div className="w-[15%] h-screen sm:hidden">
-      <div className="bg-[#101010] h-[85%] pl-[20px] pt-[40px]">
+    <div className="w-[100%] z-999 h-screen hidden sm:block absolute bg-[#101010]">
+      <div className="bg-[#101010] h-[85%] pl-[20px] pt-[40px] w-full">
         <div className="px-[10px] cursor-pointer">
-          <Image src="/logo.png" width={13} height={21} alt="logo" />
+          <LogoIcon />
         </div>
         <ul className="w-[100%] mt-[60px] flex flex-col text-[12px] font-[600] cursor-pointer">
           <li
-            className={`w-[100%] flex gap-[10px] items-center h-[48px]  pl-[10px] ${
+            className={`w-[100%] flex gap-[10px] items-center h-[60px]  pl-[10px] text-[20px] ${
               active === "sale" && activeStyle
             }`}
             onClick={() => handleClick("dashboard")}
@@ -34,7 +35,7 @@ export const Sidebar = ({active}: {active?: "sale" | "claim"}) => {
             <span>Token Sale</span>
           </li>
           <li
-            className={`w-[100%] flex gap-[10px] items-center h-[48px] pl-[10px] ${
+            className={`w-[100%] flex gap-[10px] items-center h-[60px] pl-[10px] text-[20px]  ${
               active === "claim" && activeStyle
             }`}
             onClick={() => handleClick("claim")}

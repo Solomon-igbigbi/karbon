@@ -19,6 +19,9 @@ import useCountdownTimer from "../hooks/usecountdown";
 import {useAppSelector} from "../../redux/hooks";
 import {useWeb3ModalAccount} from "@web3modal/ethers/react";
 import {useAccount} from "wagmi";
+import {ClaimStatsBoard} from "../components/desktop/claim-stats-board";
+import LogoIcon from "@/public/logo";
+import {SidebarMobile} from "../components/desktop/sidebar-mobile";
 
 const SocialLogo = ["/discord.png", "/telegram.png", "/twitter.png"];
 
@@ -31,58 +34,59 @@ const SocialLogo2 = [
 
 const tableData = [
   {
-    amount: "$67,263",
-    action: "BUY",
-    tokens_got: "5,462",
-    date: "02 FEB  •  9:23:00",
+    amount: "1",
+    action: "5,462",
+    tokens_got: "02 FEB  •  9:23:00",
   },
   {
-    amount: "$53,718",
-    action: "BUY",
-    tokens_got: "517",
-    date: "02 FEB  •  9:23:00",
+    amount: "1",
+    action: "5,462",
+    tokens_got: "02 FEB  •  9:23:00",
   },
   {
-    amount: "$12,787",
-    action: "BUY",
-    tokens_got: "6,954",
-    date: "02 FEB  •  9:23:00",
+    amount: "1",
+    action: "5,462",
+    tokens_got: "02 FEB  •  9:23:00",
   },
   {
-    amount: "$18,410",
-    action: "BUY",
-    tokens_got: "3,184",
-    date: "02 FEB  •  9:23:00",
+    amount: "1",
+    action: "5,462",
+    tokens_got: "02 FEB  •  9:23:00",
   },
   {
-    amount: "$66,121",
-    action: "BUY",
-    tokens_got: "4,010",
-    date: "02 FEB  •  9:23:00",
+    amount: "1",
+    action: "5,462",
+    tokens_got: "02 FEB  •  9:23:00",
   },
   {
-    amount: "$34,652",
-    action: "BUY",
-    tokens_got: "786",
-    date: "02 FEB  •  9:23:00",
+    amount: "1",
+    action: "5,462",
+    tokens_got: "02 FEB  •  9:23:00",
   },
   {
-    amount: "$18,410",
-    action: "BUY",
-    tokens_got: "3,184",
-    date: "02 FEB  •  9:23:00",
+    amount: "1",
+    action: "5,462",
+    tokens_got: "02 FEB  •  9:23:00",
   },
   {
-    amount: "$66,121",
-    action: "BUY",
-    tokens_got: "4,010",
-    date: "02 FEB  •  9:23:00",
+    amount: "1",
+    action: "5,462",
+    tokens_got: "02 FEB  •  9:23:00",
   },
   {
-    amount: "$34,652",
-    action: "BUY",
-    tokens_got: "786",
-    date: "02 FEB  •  9:23:00",
+    amount: "1",
+    action: "5,462",
+    tokens_got: "02 FEB  •  9:23:00",
+  },
+  {
+    amount: "1",
+    action: "5,462",
+    tokens_got: "02 FEB  •  9:23:00",
+  },
+  {
+    amount: "1",
+    action: "5,462",
+    tokens_got: "02 FEB  •  9:23:00",
   },
 ];
 
@@ -99,11 +103,12 @@ export default function Dashbaord() {
 
   return (
     <Fragment>
-      <main className="sm:hidden flex min-h-screen items-center">
-        <Sidebar active="sale" />
-        <div className="w-[100%] h-screen flex flex-col gap-[30px] py-[30px] px-[50px]">
-          <div className="flex justify-between">
-            <h2 className="text-[20px] font-[600]">Token Sale DApp</h2>
+      {/* <SidebarMobile active="claim" /> */}
+      <main className="flex min-h-screen items-center">
+        <Sidebar active="claim" />
+        <div className="w-[100%] h-screen flex flex-col gap-[30px] py-[30px] px-[50px] sm:px-[15px]">
+          <div className="flex justify-between sm:hidden">
+            <h2 className="text-[20px] font-[600] sm:hidden">Claim Token</h2>
             <div className="flex items-center justify-center gap-[8px] bg-[#101010] py-[7px] px-[13px] rounded-[4px] text-[12px] font-[400]">
               <Image
                 src="/ethereum.png"
@@ -115,52 +120,73 @@ export default function Dashbaord() {
               <FaChevronDown />
             </div>
           </div>
+          <div className="w-[100%] flex items-center justify-between px-[8px] hidden">
+            <div className="w-[21px]">
+              <LogoIcon />
+            </div>
+            <div className="flex items-center gap-[5px]">
+              <div className="flex items-center justify-center gap-[8px] bg-[#101010] py-[7px] px-[13px] rounded-[4px] text-[12px] font-[400]">
+                <Image
+                  src="/ethereum.png"
+                  width={16}
+                  height={16}
+                  alt="ethereum logo"
+                />
+                <h3>{userAddress}</h3>
+                <FaChevronDown />
+              </div>
+              <IoMenu className="text-[32px]" />
+            </div>
+          </div>
           <div className="flex gap-[10px] overflow-y-auto">
-            <div className="w-[65%]">
-              <StatsBoard />
+            <div className="w-full">
+              <ClaimStatsBoard />
               <div className="w-[100%] bg-[#101010] flex flex-col justify-between p-3 rounded-[8px] mt-[15px]">
-                <TransactionStat />
-                <table className="flex flex-col w-[100%] bg-[#000000] px-[3px] rounded-[4px] h-[355px]">
-                  <thead className="text-[10px] font-[400] py-[8px] px-[30px] text-[#FFFFFF]/70">
+                <div className="px-8 sm:px-4 py-4">
+                  <span>Vesting Schedule</span>
+                </div>
+                <table className="flex flex-col w-[100%] bg-[#000000] px-[3px] rounded-[4px] h-[550px] sm:bg-transparent">
+                  <thead className="text-[10px] py-[8px] px-[30px] text-[#FFFFFF]/70 sm:hidden">
                     <tr className=" flex items-center justify-between">
-                      <th>Amount - USDT</th>
-                      <th>Action</th>
-                      <th>Tokens Got</th>
-                      <th>Date</th>
-                      <th>Transaction Link</th>
+                      <th className="w-[150px] text-md text-left">
+                        VESTING PERIOD
+                      </th>
+                      <th className="w-[180px] text-md text-left">
+                        TOKEN RELEASED
+                      </th>
+                      <th className="w-[150px] text-md text-left">
+                        ESTIMATED RELEASE DATE
+                      </th>
                     </tr>
                   </thead>
-                  <tbody className="text-[12px] w-[100%] bg-[#101010] px-[30px] h-[315px] overflow-y-scroll">
+                  <tbody className="text-[12px] w-[100%] h-full overflow-y-scroll bg-[#0a0a0a]">
                     {tableData.map((data, index) => (
-                      <tr
-                        key={index}
-                        className="flex items-center justify-between py-[14px]"
-                      >
-                        <td className="font-[700] text-left w-[72px]">
-                          {data.amount}
-                        </td>
-                        <td className="font-[400] text-[#049330] w-[72px] ml-[20px] text-left">
-                          {data.action}
-                        </td>
-                        <td className="flex items-start w-[72px] font-[400] ml-[-10px]">
-                          {data.tokens_got}
-                          <span className="font-[400] text-[#FFFFFF]/70 ml-[2px]">
-                            KAR
-                          </span>
-                        </td>
-                        <td className="font-[400] text-[#FFFFFF]/70 ml-[-12px]">
-                          {data.date}
-                        </td>
-                        <td className="mr-[20px]">
-                          <IoLink className="text-[#FFFFFF]/70" />
-                        </td>
-                      </tr>
+                      <>
+                        <tr
+                          key={index}
+                          className="flex items-center justify-between py-[14px]"
+                        >
+                          <td className="font-[700] text-md w-[150px]  pl-[30px] sm:pl-[10px]">
+                            {data.amount}
+                          </td>
+                          <td className="font-[400] text-md w-[150px] sm:text-right sm:pr-[4px]">
+                            {data.action}{" "}
+                            <span className="text-[#FFFFFF80] opacity-50 ">
+                              KARBON
+                            </span>
+                          </td>
+                          <td className="text-[#FFFFFF80] opacity-50 w-[175px] text-md sm:hidden">
+                            {data.tokens_got}
+                          </td>
+                        </tr>
+                        <div className="border-b-[0.5px] border-[#ffffff0e]"></div>
+                      </>
                     ))}
                   </tbody>
                 </table>
               </div>
             </div>
-            <div className="w-[35%] bg-[#101010] h-[770px] rounded-[4px] px-3 py-5">
+            {/* <div className="w-[35%] bg-[#101010] h-[770px] rounded-[4px] px-3 py-5">
               <div className="flex flex-col gap-[12px] px-4 py-6 w-[100%] bg-[#000000] rounded-[8px]">
                 <div className="flex items-center justify-between">
                   <h2 className="text-[12px] font-[500]">Presale Progress</h2>
@@ -221,7 +247,7 @@ export default function Dashbaord() {
                     <input
                       value="12,345"
                       className="w-[45%] bg-[#101010] text-[24px]"
-                      onChange={() => {}}
+                      onChange={() => ""}
                     />
                     <span className="mt-[-10px] text-[#FFFFFF]/70">.00</span>
                     <span className="text-[10px] font-[400] text-[#08E04A] ml-[10px] cursor-pointer">
@@ -283,12 +309,12 @@ export default function Dashbaord() {
                   Gaziantep, Türkiye
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </main>
 
-      <main className="mmd:hidden flex flex-col min-h-screen py-[30px] px-[15px]">
+      {/* <main className="mmd:hidden flex flex-col min-h-screen py-[30px] px-[15px]">
         <div className="w-[100%] flex items-center justify-between px-[8px]">
           <Image src="/logo.png" width={13} height={21} alt="logo" />
           <div className="flex items-center gap-[10px]">
@@ -475,8 +501,8 @@ export default function Dashbaord() {
                   </div>
                 </div>
               </div>
-              <table className="flex flex-col w-[100%] border-[#000000] rounded-[4px] h-[355px] px-[5px]">
-                <tbody className="text-[12px] w-[100%] bg-[#000000]/40 border-[#000000] px-[10px] h-[355px] overflow-y-scroll">
+              <table className="flex flex-col w-[100%] border-[#000000] rounded-[4px] h-[600px] px-[5px]">
+                <tbody className="text-[12px] w-[100%] bg-[#000000] border-[#000000] px-[10px] h-[600px] overflow-y-scroll">
                   {tableData.map((data, index) => (
                     <tr
                       key={index}
@@ -484,9 +510,6 @@ export default function Dashbaord() {
                     >
                       <td className="font-[700] text-left flex flex-col">
                         <span className="text-[16px]">{data.amount}</span>
-                        <span className="text-[12px] text-[#FFFFFF]/70 mt-[2px]">
-                          {data.date}
-                        </span>
                       </td>
                       <td className="flex flex-col items-start w-[72px] font-[400] ml-[-10px]">
                         <div className="text-[16px]">
@@ -538,7 +561,6 @@ export default function Dashbaord() {
                   <input
                     value="12,345"
                     className="w-[45%] bg-[#101010] font-[400] text-[28px]"
-                    onChange={() => ""}
                   />
                   <span className="mt-[-10px] text-[#FFFFFF]/70">.00</span>
                   <span className="text-[10px] font-[400] text-[#08E04A] ml-[10px] cursor-pointer">
@@ -601,7 +623,7 @@ export default function Dashbaord() {
             </div>
           </>
         )}
-      </main>
+      </main> */}
     </Fragment>
   );
 }
