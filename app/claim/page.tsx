@@ -22,6 +22,7 @@ import {useAccount} from "wagmi";
 import {ClaimStatsBoard} from "../components/desktop/claim-stats-board";
 import LogoIcon from "@/public/logo";
 import {SidebarMobile} from "../components/desktop/sidebar-mobile";
+import AngleUp from "@/public/angle-up";
 
 const SocialLogo = ["/discord.png", "/telegram.png", "/twitter.png"];
 
@@ -140,10 +141,17 @@ export default function Dashbaord() {
           </div>
           <div className="flex gap-[10px] overflow-y-auto">
             <div className="w-full">
+              <span className="mb-8 sm:block text-[1.5rem] px-4 hidden">
+                Claim Token
+              </span>
+
               <ClaimStatsBoard />
               <div className="w-[100%] bg-[#101010] flex flex-col justify-between p-3 rounded-[8px] mt-[15px]">
-                <div className="px-8 sm:px-4 py-4">
+                <div className="px-8 sm:px-4 py-4 sm:mb-4 sm:text-[20px] flex items-center gap-2">
                   <span>Vesting Schedule</span>
+                  <span className="hidden sm:block">
+                    <AngleUp />
+                  </span>
                 </div>
                 <table className="flex flex-col w-[100%] bg-[#000000] px-[3px] rounded-[4px] h-[550px] sm:bg-transparent">
                   <thead className="text-[10px] py-[8px] px-[30px] text-[#FFFFFF]/70 sm:hidden">
@@ -169,10 +177,15 @@ export default function Dashbaord() {
                           <td className="font-[700] text-md w-[150px]  pl-[30px] sm:pl-[10px]">
                             {data.amount}
                           </td>
-                          <td className="font-[400] text-md w-[150px] sm:text-right sm:pr-[4px]">
-                            {data.action}{" "}
-                            <span className="text-[#FFFFFF80] opacity-50 ">
-                              KARBON
+                          <td className="font-[400] text-md w-[150px] sm:text-right sm:pr-[6px] sm:flex sm:flex-col sm:items-end gap-1 ">
+                            <span>
+                              {data.action}{" "}
+                              <span className="text-[#FFFFFF80] opacity-50 ">
+                                KARBON
+                              </span>
+                            </span>
+                            <span className="text-[#FFFFFF80] opacity-50 w-[175px] text-md hidden sm:text-[10px] sm:block">
+                              {data.tokens_got}
                             </span>
                           </td>
                           <td className="text-[#FFFFFF80] opacity-50 w-[175px] text-md sm:hidden">

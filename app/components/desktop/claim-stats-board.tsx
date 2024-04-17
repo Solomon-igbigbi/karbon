@@ -59,7 +59,7 @@ export const ClaimStatsBoard = () => {
           whileHover={{scale: 1.05}}
           onHoverStart={(e) => {}}
           onHoverEnd={(e) => {}}
-          className=" w-[25%] h-[45px] text-[12px] bg-[#08E04A] font-semibold text-center text-black px-[14px] py-[7px] font-[400] rounded-sm mt-8 sm:w-full sm:flex sm:justify-center sm:items-center sm:gap-1"
+          className=" w-[25%] h-[45px] text-[12px] bg-[#08E04A] font-semibold text-center text-black px-[14px] py-[7px] font-[400] rounded-sm mt-8 sm:w-[95%] sm:m-auto sm:flex sm:justify-center sm:items-center sm:gap-1"
           onClick={() => router.push("/referrals")}
         >
           Claim Tokens
