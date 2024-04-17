@@ -16,7 +16,7 @@ export const ClaimStatsBoard = () => {
 
   return (
     <div className="w-full">
-      <div className=" bg-[#101010] flex flex-col px-8 sm:px-4 py-12 rounded-tl-[8px] rounded-bl-[8px]">
+      <div className=" bg-[#101010] flex flex-col px-8 sm:px-4 py-12 rounded-tl-[8px] rounded-bl-[8px] sm:pb-8">
         <div className="flex items-center justify-between sm:flex-col sm:gap-8">
           <div className="flex flex-col gap-[10px] w-1/4 sm:w-full">
             <span className="text-[10px] font-[400] text-[#FFFFFF]/70">
@@ -33,10 +33,12 @@ export const ClaimStatsBoard = () => {
             <span className="text-[10px] font-[400] text-[#FFFFFF]/70">
               AMOUNT SPENT
             </span>
-            <span className="text-[28px] font-[300]">
-              21,325<sup className="text-[15px] font-[300] mt-[4px]">.45</sup>{" "}
-              <span className="text-[#FFFFFF80] opacity-50">USDT</span>
-            </span>
+            <div className="text-[28px] font-[300] flex ">
+              <span>
+                00.00345{" "}
+                <span className="text-[#FFFFFF80] opacity-50">KARBON</span>
+              </span>
+            </div>
           </div>
           <div className="flex flex-col gap-[10px] w-1/4 sm:w-full">
             <span className="text-[10px] font-[400] text-[#FFFFFF]/70">
@@ -59,7 +61,7 @@ export const ClaimStatsBoard = () => {
           whileHover={{scale: 1.05}}
           onHoverStart={(e) => {}}
           onHoverEnd={(e) => {}}
-          className=" w-[25%] h-[45px] text-[12px] bg-[#08E04A] font-semibold text-center text-black px-[14px] py-[7px] font-[400] rounded-sm mt-8 sm:w-[95%] sm:m-auto sm:flex sm:justify-center sm:items-center sm:gap-1"
+          className=" w-[25%] h-[45px] text-[12px] bg-[#08E04A] font-semibold text-center text-black px-[14px] py-[7px] font-[400] rounded-sm mt-8 sm:w-[95%]  sm:m-auto sm:mt-10 sm:flex sm:justify-center sm:items-center sm:gap-1"
           onClick={() => router.push("/referrals")}
         >
           Claim Tokens
